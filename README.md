@@ -14,14 +14,14 @@
 
 ### Features
 
-- Create **Local Notifications** on Android, iOS and Web using Flutter.
-- Easy to integrate with **Push notification's service** as **Firebase Messaging** or any another one;
-- Easy to use and highly customizable.
-- Add **images**, **sounds**, **emoticons**, **buttons** and different layouts on your notifications.
-- Notifications could be created at **any moment** (on Foreground, Background or even when the application is terminated/killed).
-- **High trustworthy** on receive notifications in any Application lifecycle.
-- Notifications are received on **Flutter level code** when they are created, displayed, dismissed or even tapped by the user.
-- Notifications could be **scheduled** repeatedly or not, with seconds precision.
+- Create **Local Notifications** on Android, iOS and Web using Flutter.使用 Flutter 在 Android、iOS 和 Web 上創建**本地通知**。
+- Easy to integrate with **Push notification's service** as **Firebase Messaging** or any another one;易於與 **推送通知服務** 集成為 **Firebase 消息傳遞** 或任何其他服務；
+- Easy to use and highly customizable.易於使用且高度可定制。
+- Add **images**, **sounds**, **emoticons**, **buttons** and different layouts on your notifications.在通知中添加**圖像**、**聲音**、**表情**、**按鈕**和不同的佈局。
+- Notifications could be created at **any moment** (on Foreground, Background or even when the application is terminated/killed).通知可以在**任何時候**創建（在前台、後台，甚至在應用程序被終止/終止時）。
+- **High trustworthy** on receive notifications in any Application lifecycle.**高度可信賴**在任何應用程序生命週期中接收通知。
+- Notifications are received on **Flutter level code** when they are created, displayed, dismissed or even tapped by the user.當用戶創建、顯示、關閉甚至點擊通知時，會在 **Flutter 級別代碼** 上收到通知。
+- Notifications could be **scheduled** repeatedly or not, with seconds precision.通知可以重複或不重複安排**，精確到秒。
 <br>
 
 *Some **android** notification examples:*
@@ -54,7 +54,7 @@ All notifications could be created locally or via Firebase services, with all th
 ![](https://raw.githubusercontent.com/rafaelsetragni/awesome_notifications/master/example/assets/readme/awesome-notifications-atention.jpg)
 ![](https://raw.githubusercontent.com/rafaelsetragni/awesome_notifications/master/example/assets/readme/awesome-notifications-progress.jpg)
 
-*Working progress percentages of awesome notifications plugin*
+*Working progress percentages of awesome notifications plugin* *真棒通知插件的工作進度百分比*
 
 <br>
 
@@ -71,15 +71,20 @@ All notifications could be created locally or via Firebase services, with all th
 
 ## Main Philosophy
 
-Considering all the many different devices available, with different hardware and software resources, this plugin ALWAYS shows the notification, trying to use the maximum resources available. If the resource is not available, the notification ignores that specific resource, but shows the rest of notification anyway.
+Considering all the many different devices available, with different hardware and software resources, this plugin ALWAYS shows the notification, trying to use the maximum resources available. If the resource is not available, the notification ignores that specific resource, but shows the rest of notification anyway.  
+考慮到所有許多不同的可用設備，具有不同的硬件和軟件資源，這個插件總是顯示通知，試圖使用最大的可用資源。如果資源不可用，則通知會忽略該特定資源，但仍會顯示通知的其餘部分。
 
-**Example**: If the device has LED colored lights, use it. Otherwise, ignore the lights, but shows the notification with all another resources available. In last case, shows at least the most basic notification.
+**Example**: If the device has LED colored lights, use it. Otherwise, ignore the lights, but shows the notification with all another resources available. In last case, shows at least the most basic notification.  
+**示例**：如果設備有 LED 彩色燈，請使用它。否則，忽略燈，但顯示所有其他可用資源的通知。在最後一種情況下，至少顯示最基本的通知。
 
-Also, the Notification Channels follows the same rule. If there is no channel segregation of notifications, use the channel configuration as only defaults configuration. If the device has channels, use it as expected to be.
+Also, the Notification Channels follows the same rule. If there is no channel segregation of notifications, use the channel configuration as only defaults configuration. If the device has channels, use it as expected to be.  
+此外，通知渠道遵循相同的規則。如果沒有通知的通道隔離，則將通道配置用作僅默認配置。如果設備有頻道，請按預期使用。
 
-And all notifications sent while the app was killed are registered and delivered as soon as possible to the Application, after the plugin initialization, respecting the delivery order.
+And all notifications sent while the app was killed are registered and delivered as soon as possible to the Application, after the plugin initialization, respecting the delivery order.  
+並且在應用程序被終止時發送的所有通知都會在插件初始化後按照交付順序註冊並儘快交付給應用程序。
 
-This way, your Application will receive **all notifications at Flutter level code**.
+This way, your Application will receive **all notifications at Flutter level code**.  
+這樣，您的應用程序將收到**所有 Flutter 級別代碼的通知**。
     
 <br>
 <br>
@@ -142,7 +147,7 @@ awesome_notifications: any # Any attribute updates automatically your source to 
 import 'package:awesome_notifications/awesome_notifications.dart';
 ```
 
-3. Initialize the plugin on main.dart, before MaterialApp widget (preferentially inside main() method), with at least one native icon and one channel
+3. Initialize the plugin on main.dart, before MaterialApp widget (preferentially inside main() method), with at least one native icon and one channel 在 main.dart 上初始化插件，在 MaterialApp 小部件之前（最好在 main() 方法內），至少有一個原生圖標和一個通道
 
 ```dart
 AwesomeNotifications().initialize(
@@ -167,7 +172,7 @@ AwesomeNotifications().initialize(
 );
 ```
 
-4. Request the user authorization to send local and push notifications (Remember to show a dialog alert to the user before call this request)
+4. Request the user authorization to send local and push notifications (Remember to show a dialog alert to the user before call this request) 請求用戶授權發送本地和推送通知（記得在調用此請求之前向用戶顯示對話框警報）
 
 ```dart
 AwesomeNotifications().isNotificationAllowed().then((isAllowed) {
@@ -180,7 +185,7 @@ AwesomeNotifications().isNotificationAllowed().then((isAllowed) {
 });
 ```
 
-5. On your main page, before MaterialApp widget, starts to listen the notification actions (to detect tap)
+5. On your main page, before MaterialApp widget, starts to listen the notification actions (to detect tap) 在您的主頁上，在 MaterialApp 小部件之前，開始監聽通知操作（以檢測點擊）
 
 ```dart
 AwesomeNotifications().actionStream.listen(
@@ -199,7 +204,7 @@ AwesomeNotifications().actionStream.listen(
 );
 ```
 
-6. In any place of your app, create a new notification
+6. In any place of your app, create a new notification 在您的應用程序的任何地方，創建一個新的通知
 
 ```dart
 AwesomeNotifications().createNotification(
@@ -212,7 +217,7 @@ AwesomeNotifications().createNotification(
 );
 ```
 
-**THATS IT! CONGRATZ MY FRIEND!!!**
+**THATS IT! CONGRATZ MY FRIEND!!! 而已！恭喜我的朋友！！！**
 
 <br>
 
@@ -220,7 +225,8 @@ AwesomeNotifications().createNotification(
 
 <br>
 
-Check out this incredible tutorial made by Ashley Novik, from [ResoCoder team](https://resocoder.com). This tutorial cover the most common features available for Awesome Notifications.
+Check out this incredible tutorial made by Ashley Novik, from [ResoCoder team](https://resocoder.com). This tutorial cover the most common features available for Awesome Notifications.  
+查看由 [ResoCoder 團隊](https://resocoder.com) 的 Ashley Novik 製作的令人難以置信的教程。本教程涵蓋了可用於 Awesome Notifications 的最常見功能。
 
 [![Awesome Notifications Video Tutorial](https://img.youtube.com/vi/JAq9fVn3X7U/0.jpg)](https://www.youtube.com/watch?v=JAq9fVn3X7U)
     
@@ -249,7 +255,8 @@ To run the examples, follow the steps bellow:
     
 ## Notification Life Cycle
 
-Notifications are received by local code or Push service using native code, so the messages will appears immediately or at schedule time, independent of your application state.
+Notifications are received by local code or Push service using native code, so the messages will appears immediately or at schedule time, independent of your application state.  
+通知由本地代碼或使用本機代碼的推送服務接收，因此消息將立即或按計劃時間出現，與您的應用程序狀態無關。
 
 ![](https://raw.githubusercontent.com/rafaelsetragni/awesome_notifications/master/example/assets/readme/notification-life-cycle.png)
 
@@ -276,44 +283,45 @@ The Flutter code will be called as soon as possible using [Dart Streams](https:/
 
 ## Permissions
 
-Permissions give transparency to the user of what you pretend to do with your app while its in use. To show any notification on device, you must obtain the user consent and keep in mind that this consent can be revoke at any time, in any platform. On Android, the basic permissions are always conceived to any new installed app, but for iOS, even the basic permission must be requested to the user.
+Permissions give transparency to the user of what you pretend to do with your app while its in use. To show any notification on device, you must obtain the user consent and keep in mind that this consent can be revoke at any time, in any platform. On Android, the basic permissions are always conceived to any new installed app, but for iOS, even the basic permission must be requested to the user.  
+權限讓用戶了解您在使用應用程序時假裝對其進行的操作。要在設備上顯示任何通知，您必須獲得用戶同意，並請記住，此同意可以隨時在任何平台上撤銷。在 Android 上，基本權限總是為任何新安裝的應用程序設計的，但對於 iOS，即使是基本權限也必須向用戶請求。
 
 The permissions can be defined in 3 types:
 
-- Normal permissions: Are permissions not considered dangerous and do not require the explicity user consent to be enabled.
-- Execution permissions: Are permissions considered more sensible to the user and you must obtain his explicity consent to use.
-- Special/Dangerous permissions: Are permissions that can harm the user experience or his privacity and you must obtain his explicity consent and, depending of what platform are you running, you must obtain permission from the manufacture itself to use it.
+- Normal permissions: Are permissions not considered dangerous and do not require the explicity user consent to be enabled. 正常權限：權限是否不被認為是危險的，並且不需要啟用明確的用戶同意。
+- Execution permissions: Are permissions considered more sensible to the user and you must obtain his explicity consent to use. 執行權限：權限是否被認為對用戶更明智，您必須獲得他的明確同意才能使用。
+- Special/Dangerous permissions: Are permissions that can harm the user experience or his privacity and you must obtain his explicity consent and, depending of what platform are you running, you must obtain permission from the manufacture itself to use it. 特殊/危險權限：是可能損害用戶體驗或其隱私的權限，您必須獲得他的明確同意，並且根據您運行的平台，您必須獲得製造商本身的許可才能使用它。
 
-As a good pratice, consider always to check if the permissions that you're desiring are conceived before create any new notification, independent of platform. To check if the permissions needs the explicity user consent, call the method shouldShowRationaleToRequest. The list of permissions that needs a rationale to the user can be different between platforms and O.S. versions. And if you app does not require extremely the permission to execute what you need, consider to not request the user permission and respect his will.
+As a good pratice, consider always to check if the permissions that you're desiring are conceived before create any new notification, independent of platform. To check if the permissions needs the explicity user consent, call the method shouldShowRationaleToRequest. The list of permissions that needs a rationale to the user can be different between platforms and O.S. versions. And if you app does not require extremely the permission to execute what you need, consider to not request the user permission and respect his will. 作為一種好的做法，請始終考慮在創建任何新通知之前檢查您想要的權限是否已被構思，獨立於平台。要檢查權限是否需要明確的用戶同意，請調用方法 shouldShowRationaleToRequest。需要向用戶說明理由的權限列表可能因平台和操作系統而異。版本。如果您的應用程序不需要非常許可來執行您需要的操作，請考慮不要請求用戶許可並尊重他的意願。
 
 <br>
     
 ### Notification's Permissions:
 
-- Alert: Alerts are notifications with high priority that pops up on the user screen. Notifications with normal priority only shows the icon on status bar.
+- Alert: Alerts are notifications with high priority that pops up on the user screen. Notifications with normal priority only shows the icon on status bar. 警報：警報是在用戶屏幕上彈出的具有高優先級的通知。具有正常優先級的通知僅在狀態欄上顯示圖標。
 
-- Sound: Sound allows the ability to play sounds for new displayed notifications. The notification sounds are limited to a few seconds and if you pretend to play a sound for more time, you must consider to play a background sound to do it simultaneously with the notification.
+- Sound: Sound allows the ability to play sounds for new displayed notifications. The notification sounds are limited to a few seconds and if you pretend to play a sound for more time, you must consider to play a background sound to do it simultaneously with the notification. 聲音：聲音允許為新顯示的通知播放聲音。通知聲音被限制在幾秒鐘內，如果您假裝播放聲音更長時間，您必須考慮播放背景聲音以與通知同時播放。
 
-- Badge: Badge is the ability to display a badge alert over the app icon to alert the user about updates. The badges can be displayed on numbers or small dots, depending of platform or what the user defined in the device settings. Both Android and iOS can show numbers on badge, depending of its version and distribution.
+- Badge: Badge is the ability to display a badge alert over the app icon to alert the user about updates. The badges can be displayed on numbers or small dots, depending of platform or what the user defined in the device settings. Both Android and iOS can show numbers on badge, depending of its version and distribution. 徽章：徽章是在應用程序圖標上顯示徽章警報以提醒用戶有關更新的能力。徽章可以顯示在數字或小點上，具體取決於平台或用戶在設備設置中定義的內容。 Android 和 iOS 都可以在徽章上顯示數字，具體取決於其版本和分佈。
 
-- Light: The ability to display colorful small lights, blanking on the device while the screen is off to alert the user about updates. Only a few Android devices have this feature.
+- Light: The ability to display colorful small lights, blanking on the device while the screen is off to alert the user about updates. Only a few Android devices have this feature. 燈：能夠顯示彩色小燈，在屏幕關閉時在設備上消隱以提醒用戶有關更新。只有少數 Android 設備具有此功能。
 
-- Vibration: The ability to vibrate the device to alert the user about updates.
+- Vibration: The ability to vibrate the device to alert the user about updates. 振動：振動設備以提醒用戶有關更新的能力。
 
-- FullScreenIntent: The ability to show the notifications on pop up even if the user is using another app.
+- FullScreenIntent: The ability to show the notifications on pop up even if the user is using another app. FullScreenIntent：即使用戶正在使用另一個應用程序，也能夠在彈出窗口中顯示通知。
 
-- PreciseAlarms: Precise alarms allows the scheduled notifications to be displayed at the expected time. This permission can be revoke by special device modes, such as baterry save mode, etc. Some manufactures can disable this feature if they decide that your app is consumpting many computational resources and decressing the baterry life (and without changing the permission status for your app). So, you must take in consideration that some schedules can be delayed or even not being displayed, depending of what platform are you running. You can increase the chances to display the notification at correct time, enable this permission and setting the correct notification category, but you never gonna have 100% sure about it.
+- PreciseAlarms: Precise alarms allows the scheduled notifications to be displayed at the expected time. This permission can be revoke by special device modes, such as baterry save mode, etc. Some manufactures can disable this feature if they decide that your app is consumpting many computational resources and decressing the baterry life (and without changing the permission status for your app). So, you must take in consideration that some schedules can be delayed or even not being displayed, depending of what platform are you running. You can increase the chances to display the notification at correct time, enable this permission and setting the correct notification category, but you never gonna have 100% sure about it. PreciseAlarms：精確警報允許在預期時間顯示預定通知。此權限可以通過特殊設備模式撤銷，例如電池保存模式等。如果某些製造商認為您的應用程序消耗大量計​​算資源並降低電池壽命（並且不更改應用程序的權限狀態），則可以禁用此功能）。因此，您必須考慮到某些計劃可能會延遲甚至不顯示，具體取決於您運行的平台。您可以增加在正確時間顯示通知的機會，啟用此權限並設置正確的通知類別，但您永遠不會 100% 確定它。
 
-- CriticalAlert: Critical alerts is a special permission that allows to play sounds and vibrate for new notifications displayed, even if the device is in Do Not Disturbe / Silent mode. For iOS, you must request Apple a authorization to your app use it.
+- CriticalAlert: Critical alerts is a special permission that allows to play sounds and vibrate for new notifications displayed, even if the device is in Do Not Disturbe / Silent mode. For iOS, you must request Apple a authorization to your app use it. CriticalAlert：關鍵警報是一項特殊權限，即使設備處於請勿打擾/靜音模式，它也允許播放聲音和振動以顯示新通知。對於 iOS，您必須請求 Apple 授權您的應用程序才能使用它。
 
-- OverrideDnD: Override DnD allows the notification to decrease the Do Not Disturbe / Silent mode level enable to display critical alerts for Alarm and Call notifications. For Android, you must require the user consent to use it. For iOS, this permission is always enabled with CriticalAlert.
+- OverrideDnD: Override DnD allows the notification to decrease the Do Not Disturbe / Silent mode level enable to display critical alerts for Alarm and Call notifications. For Android, you must require the user consent to use it. For iOS, this permission is always enabled with CriticalAlert. OverrideDnD：Override DnD 允許通知降低請勿打擾/靜音模式級別，以顯示警報和呼叫通知的關鍵警報。對於 Android，您必須徵得用戶同意才能使用它。對於 iOS，此權限始終通過 CriticalAlert 啟用。
 
-- Provisional: (Only has effect on iOS) The ability to display notifications temporarially without the user consent.
+- Provisional: (Only has effect on iOS) The ability to display notifications temporarially without the user consent. 臨時：（僅對 iOS 有效）無需用戶同意臨時顯示通知的能力。
 
-- Car: The ability to display notifications while the device is in car mode.
+- Car: The ability to display notifications while the device is in car mode. 汽車：能夠在設備處於汽車模式時顯示通知。
 
     
-OBS: If none permission is requested through `requestPermissionToSendNotifications` method, the standard permissions requested are Alert, Badge, Sound, Vibrate and Light.
+OBS: If none permission is requested through `requestPermissionToSendNotifications` method, the standard permissions requested are Alert, Badge, Sound, Vibrate and Light. OBS：如果通過 `requestPermissionToSendNotifications` 方法沒有請求任何權限，則請求的標準權限為 Alert、Badge、Sound、Vibrate 和 Light。
 
 <br>
     
@@ -324,15 +332,15 @@ A permission can be segregated in 3 different levels:
 ![image](https://user-images.githubusercontent.com/40064496/143137760-32b99fad-5827-4d0e-9d4f-c39c82ca6bfd.png)
 
 
-- Device level: The permissions set at the global device configuration are appliable at any app installed on device, such as disable/enable all notifications, baterry save mode / low power mode and silent / do not disturb mode.
-- Application level: The permissions set at the global app configurations are appliable to any notification in any channel.
-- Channel level: The permissions set on the channel has effect only for notifications displayed through that specific channel.
+- Device level: The permissions set at the global device configuration are appliable at any app installed on device, such as disable/enable all notifications, baterry save mode / low power mode and silent / do not disturb mode. 設備級別：在全局設備配置中設置的權限適用於設備上安裝的任何應用程序，例如禁用/啟用所有通知、電池節省模式/低功耗模式和靜音/請勿打擾模式。
+- Application level: The permissions set at the global app configurations are appliable to any notification in any channel. 應用級別：在全局應用配置中設置的權限適用於任何渠道中的任何通知。
+- Channel level: The permissions set on the channel has effect only for notifications displayed through that specific channel. 頻道級別：在頻道上設置的權限僅對通過該特定頻道顯示的通知有效。
 
 <br>
     
 ### Full example code
 
-Bellow there is a full example of how to check if the desired permission is enable and how to request it showing a dialog with a rationale if necessary (this example was took from our example app):
+Bellow there is a full example of how to check if the desired permission is enable and how to request it showing a dialog with a rationale if necessary (this example was took from our example app): 下面是一個完整示例，說明如何檢查是否啟用了所需的權限以及如何請求它在必要時顯示一個帶有基本原理的對話框（此示例取自我們的示例應用程序）：
 
 ```Dart
   static Future<List<NotificationPermission>> requestUserPermissions(
@@ -460,7 +468,8 @@ Bellow there is a full example of how to check if the desired permission is enab
 
 ## Notification's Category
 
-The notification category is a group of predefined categories that best describe the nature of the notification and may be used by some systems for ranking, delay or filter the notifications. Its highly recommended to correctly categorize your notifications.
+The notification category is a group of predefined categories that best describe the nature of the notification and may be used by some systems for ranking, delay or filter the notifications. Its highly recommended to correctly categorize your notifications.  
+通知類別是一組預定義的類別，可以最好地描述通知的性質，並且可以被某些系統用於對通知進行排名、延遲或過濾。強烈建議正確分類您的通知。
 
  * Alarm: Alarm or timer.
  * Call: incoming call (voice or video) or similar synchronous communication request
